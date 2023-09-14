@@ -1,0 +1,94 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  width: 500px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+  background-color: black;
+  color:white;
+  padding: 10px 20px;
+  width: 460px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  font-size: 20px;
+}
+
+.add-new-habit{
+  background-color: inherit;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.add-new-habit,.logo{
+  transition: color 0.3s ease-in-out;
+}
+
+.add-new-habit:hover, .logo:hover{
+  color:rgb(236, 209, 141);
+  cursor: pointer;  
+}
+
+.habit-icon{
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.show-date{
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-date a{
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.focus-date{
+  background-color: rgb(236, 209, 141); 
+}
+
+.habits{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-top: 30px;
+}
+
+button.habit{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(234, 225, 202);  
+  border-radius: 2px;
+  border: 2px solid black;
+  align-items: center;
+  font-weight: 900;
+  margin: 0 10px;
+  width: 100%;
+}
+
+.habit:not(.completed):hover{
+  background-color: rgb(236, 209, 141);
+  cursor: pointer;
+}
+
