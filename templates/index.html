@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<section class="habits">
+  {% for habit in habits %}
+  <form action="{{ url_for('complete') }}" class="complete-form" method="post">
+    <input type="hidden" value="{{ habit }}" name="habit">
+    <input type="hidden" value="{{ selected_date }}" name="date">
+    {% if habit in habits_completion[selected_date] %}
+      <button class="habit completed" disabled>
+        <span>{{ habit }}</span>
+          <svg class="habit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd" />
+          </svg>
+      </button>
+    {% else %}
+      <button class="habit">
+        <span>{{ habit }}</span>
+      </button>
+    {% endif %}
+
+  </form>
+  {% endfor %}
+  
+  
+</section>
+
+{% endblock %}

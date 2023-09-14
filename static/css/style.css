@@ -65,6 +65,7 @@ header{
 
 .focus-date{
   background-color: rgb(236, 209, 141); 
+  scale: 1.1;
 }
 
 .habits{
@@ -92,3 +93,41 @@ button.habit{
   cursor: pointer;
 }
 
+.add-form{
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 25px;
+  row-gap: 10px;
+}
+textarea{
+  width: 100%;
+  resize: none;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.add-form input{
+  width: 100px;
+  padding: 5px 10px;
+  background-color: rgb(126, 227, 115);
+  border: none;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 14px;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+  align-self: flex-end;
+}
+
+
+.complete-form{
+  width: 100%;
+}
+
+.completed-habit.habit{
+  
+}

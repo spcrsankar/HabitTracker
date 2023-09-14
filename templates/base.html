@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit tracking application</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1 class="logo">
+      Habit
+    </h1>
+    <a class="add-new-habit" href="{{ url_for('add') }}">
+      + add new
+    </a>  
+  </header>
+  
+  <section class="show-date">
+    {% for date in date_range(selected_date) %}
+      {% if loop.index0 == 3 %}
+        <a href="#" class="date focus-date" date="2023-10-12">
+          <span class="month">{{ date[0] }}</span>
+          <span class="day">{{ date[1] }}</span>
+        </a>
+      {% else %}
+        <a href="{{ url_for('index',date=date[2]) }}" class="date" date="2023-10-12">
+          <span class="month">{{ date[0] }}</span>
+          <span class="day">{{ date[1] }}</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+
+  </section>
+  
+  {% block body %}
+  {% endblock %}
+</body>
+</html>
